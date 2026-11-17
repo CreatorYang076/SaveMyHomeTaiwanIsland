@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>台海安全態勢與民防預警系統</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 頂部緊急狀態橫幅 -->
+  <div class="top-alert-banner level-yellow" role="alert">
+    <div class="banner-content">
+      <span class="status-dot"></span>
+      <strong>目前警戒狀態：黃色警戒（加強監測與情資彙整）</strong>
+      <span class="mock-tag">介面展示／模擬數據</span>
+    </div>
+    <span class="update-time">最後更新：2026-11-17 18:00 (CST)</span>
+  </div>
+
+  <!-- 頁首導覽 -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <h1>台海安全態勢與民防預警平台</h1>
+        <p class="subtitle">Taiwan Strait Situational Awareness &amp; Civil Defense Early Warning</p>
+      </div>
+      <div class="header-actions">
+        <a href="#shelter-guide" class="btn btn-outline">防空避難指引</a>
+        <a href="#emergency-kit" class="btn btn-primary">緊急避難包清單</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+    <!-- 左側主資訊區 -->
+    <div class="primary-column">
+      <!-- 四級警戒燈號矩陣 -->
+      <section class="card" aria-labelledby="alert-levels-title">
+        <div class="card-header">
+          <h2 id="alert-levels-title">預警等級定義與現行狀態</h2>
+        </div>
+        <div class="level-grid">
+          <div class="level-item level-green">
+            <span class="level-badge">第一級｜常態</span>
+            <h3>綠燈：日常監測</h3>
+            <p>海空域活動維持例行態勢，民防與基礎設施正常運作。</p>
+          </div>
+          <div class="level-item level-yellow active">
+            <span class="level-badge">第二級｜現行</span>
+            <h3>黃燈：異常警戒</h3>
+            <p>周邊海空域演訓活動增加，啟動跨部會全天候情資監控。</p>
+          </div>
+          <div class="level-item level-orange">
+            <span class="level-badge">第三級｜戒備</span>
+            <h3>橙燈：高度戒備</h3>
+            <p>偵測到大規模兵力集結或封鎖徵候，民防體系進入待命。</p>
+          </div>
+          <div class="level-item level-red">
+            <span class="level-badge">第四級｜緊急</span>
+            <h3>紅燈：緊急避難</h3>
+            <p>確認飛彈或武力襲擊威脅，立即依防空警報進入避難設施。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 多維度態勢監測指標 -->
+      <section class="card" aria-labelledby="metrics-title">
+        <div class="card-header">
+          <h2 id="metrics-title">多維度態勢監測指標（模擬數據）</h2>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric-box">
+            <span class="metric-label">周邊空域動態</span>
+            <strong class="metric-value text-yellow">異常頻密</strong>
+            <span class="metric-desc">偵獲軍機活動架次高於近 30 日均值</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-label">周邊海域動態</span>
+            <strong class="metric-value text-yellow">中度關注</strong>
+            <span class="metric-desc">主要航道維持暢通，海巡艦艇加強巡弋</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-label">海纜與通訊網路</span>
+            <strong class="metric-value text-green">正常運作</strong>
+            <span class="metric-desc">對外海纜與低軌衛星備援系統狀態正常</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-label">全島防空避難所</span>
+            <strong class="metric-value text-green">整備完成</strong>
+            <span class="metric-desc">已造冊避難處所標示與物資檢核完成</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 即時通報與官方公告紀錄 -->
+      <section class="card" aria-labelledby="feed-title">
+        <div class="card-header">
+          <h2 id="feed-title">即時情資與民防通報紀錄</h2>
+        </div>
+        <ul class="feed-list">
+          <li class="feed-item">
+            <div class="feed-meta">
+              <span class="tag tag-yellow">警戒通報</span>
+              <time datetime="2026-11-17T17:45">17:45</time>
+            </div>
+            <p class="feed-text">海空域聯合情監偵系統持續掌握周邊海空動態，目前民航與海上貨運航線均正常通行。</p>
+          </li>
+          <li class="feed-item">
+            <div class="feed-meta">
+              <span class="tag tag-info">民防宣導</span>
+              <time datetime="2026-11-17T15:20">15:20</time>
+            </div>
+            <p class="feed-text">提醒民眾可透過「警政服務 App」或各縣市防空疏散避難專區，預先查詢住家與工作地點鄰近之地下避難設施。</p>
+          </li>
+          <li class="feed-item">
+            <div class="feed-meta">
+              <span class="tag tag-green">系統狀態</span>
+              <time datetime="2026-11-17T12:00">12:00</time>
+            </div>
+            <p class="feed-text">災防告警細胞廣播訊息（CBS）與全國防空警報發放系統完成例行連線測試。</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- 右側民防應變側欄 -->
+    <aside class="sidebar-column">
+      <!-- 防空警報辨識與疏散指引 -->
+      <section id="shelter-guide" class="card">
+        <div class="card-header">
+          <h2>防空警報音與疏散指引</h2>
+        </div>
+        <div class="guide-block">
+          <h3>緊急警報音符</h3>
+          <p><strong>1 長音、2 短音</strong>（長音 15 秒、短音各 5 秒，間隔 5 秒，連續 3 次，共 115 秒）。</p>
+        </div>
+        <div class="guide-block">
+          <h3>解除警報音符</h3>
+          <p><strong>1 長音</strong>（持續 90 秒）。</p>
+        </div>
+        <div class="guide-block">
+          <h3>避難三原則</h3>
+          <ol class="action-steps">
+            <li><strong>地下優於地上：</strong>優先進入地下室或防空避難處所。</li>
+            <li><strong>室內優於室外：</strong>若無法及時進入地下室，迅速進入堅固建築物內部。</li>
+            <li><strong>遠離外牆門窗：</strong>避開玻璃窗戶，採取「兩牆原則」掩蔽並採跪姿護頭。</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 個人緊急避難包檢核清單 -->
+      <section id="emergency-kit" class="card">
+        <div class="card-header">
+          <h2>緊急避難包基礎清單</h2>
+        </div>
+        <ul class="checklist">
+          <li><label><input type="checkbox" checked /> 飲用水（每人每日 3 公升，備足 3 日）</label></li>
+          <li><label><input type="checkbox" checked /> 乾糧、罐頭與高熱量能量棒</label></li>
+          <li><label><input type="checkbox" /> 個人常用藥品、急救包與三角巾</label></li>
+          <li><label><input type="checkbox" /> 手電筒、哨子、行動電源與充電線</label></li>
+          <li><label><input type="checkbox" /> 身分證件影本、少量現金與保暖衣物</label></li>
+          <li><label><input type="checkbox" /> 攜帶式收音機（防網路中斷時接收廣播）</label></li>
+        </ul>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>本頁面為前端預警介面架構範例，數據僅供排版展示之用；實際安全情資與警報請以國防部、內政部及災防告警系統發布為準。</p>
+    </div>
+  </footer>
+</body>
+</html>

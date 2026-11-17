@@ -1,0 +1,385 @@
+/* 基礎變數與深色戰情室配色 */
+:root {
+  --bg-page: #0b0f17;
+  --bg-card: #131a26;
+  --bg-subcard: #192231;
+  --border-color: #263245;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+
+  /* 警戒狀態色系 */
+  --color-green: #22c55e;
+  --color-green-bg: rgba(34, 197, 94, 0.14);
+  --color-yellow: #eab308;
+  --color-yellow-bg: rgba(234, 179, 8, 0.15);
+  --color-orange: #f97316;
+  --color-orange-bg: rgba(249, 115, 22, 0.15);
+  --color-red: #ef4444;
+  --color-red-bg: rgba(239, 68, 68, 0.18);
+  --color-info: #38bdf8;
+  --color-info-bg: rgba(56, 189, 248, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", Roboto, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 頂部警戒橫幅 */
+.top-alert-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 24px;
+  font-size: 0.92rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.top-alert-banner.level-yellow {
+  background-color: #2b230a;
+  color: #fde047;
+  border-bottom-color: rgba(234, 179, 8, 0.4);
+}
+
+.top-alert-banner.level-red {
+  background-color: #3b0d0d;
+  color: #fca5a5;
+  border-bottom-color: rgba(239, 68, 68, 0.5);
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: currentColor;
+  display: inline-block;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.25); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.mock-tag {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+}
+
+.update-time {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* 頁首 */
+.site-header {
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  padding: 24px 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.site-header h1 {
+  font-size: 1.65rem;
+  letter-spacing: 0.02em;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  margin-top: 2px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 9px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.88;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.btn-outline {
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  background-color: var(--bg-subcard);
+}
+
+/* 主要雙欄版面 */
+.main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  padding-top: 28px;
+  padding-bottom: 40px;
+}
+
+.primary-column,
+.sidebar-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 卡片共用樣式 */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 22px;
+}
+
+.card-header {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card-header h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* 四級警戒矩陣 */
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.level-item {
+  background-color: var(--bg-subcard);
+  border: 1px solid var(--border-color);
+  border-left-width: 4px;
+  border-radius: 8px;
+  padding: 14px 16px;
+  opacity: 0.65;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.level-item.active {
+  opacity: 1;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.level-item.level-green { border-left-color: var(--color-green); }
+.level-item.level-yellow { border-left-color: var(--color-yellow); }
+.level-item.level-orange { border-left-color: var(--color-orange); }
+.level-item.level-red { border-left-color: var(--color-red); }
+
+.level-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.level-item h3 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.level-item p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* 態勢監測指標 */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.metric-box {
+  background-color: var(--bg-subcard);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.metric-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.metric-value {
+  font-size: 1.35rem;
+}
+
+.text-green { color: var(--color-green); }
+.text-yellow { color: var(--color-yellow); }
+.text-red { color: var(--color-red); }
+
+.metric-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+/* 即時通報列表 */
+.feed-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.feed-item {
+  background-color: var(--bg-subcard);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.feed-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.feed-meta time {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.tag-yellow { background: var(--color-yellow-bg); color: var(--color-yellow); }
+.tag-green { background: var(--color-green-bg); color: var(--color-green); }
+.tag-info { background: var(--color-info-bg); color: var(--color-info); }
+
+.feed-text {
+  font-size: 0.92rem;
+}
+
+/* 側欄民防指引與檢核清單 */
+.guide-block + .guide-block {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.guide-block h3 {
+  font-size: 0.96rem;
+  color: #cbd5e1;
+  margin-bottom: 6px;
+}
+
+.guide-block p,
+.action-steps {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.action-steps {
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checklist label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.checklist input[type="checkbox"] {
+  margin-top: 4px;
+  accent-color: #2563eb;
+  width: 16px;
+  height: 16px;
+}
+
+/* 頁尾 */
+.site-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+/* 響應式設計 */
+@media (max-width: 900px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .level-grid,
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
